@@ -2,25 +2,25 @@
 
 int main(int ac, char **argv)
 {
-    char *prompt = "(Terminal) $ ";
-    char *user_input = NULL;      /*holds user input*/
-    char *user_input_copy = NULL; /* holds copy of the string to be          tokenized */
-    char *tkn;
-    int i = 0;
-    int tkn_num = 0;
-    size_t n = 0;
-    ssize_t rd_chars;
-    const char *delimita = " \n";
-
-    /* declaring void variables */
-    (void)ac;
-    ;
-
-    /* create an infinite loop */
-    while (1)
-    {
-        printf("%s", prompt);
-        rd_chars = getline(&user_input, &n, stdin);
+	char *prompt = "(Terminal) $ ";
+	char *user_input = NULL;      /*holds user input*/
+	char *user_input_copy = NULL; /* holds copy of the string to be          tokenized */
+	char *tkn;
+	int i = 0;
+    	int tkn_num = 0;
+    	size_t n = 0;
+    	ssize_t rd_chars;
+	const char *delimita = " \n";
+	
+    	/* declaring void variables */
+    	(void)ac;
+  	void execmd(char **argv);		
+	
+    	/* create an infinite loop */
+    	while (1)
+    	{
+        	printf("%s", prompt);
+        	rd_chars = getline(&user_input, &n, stdin);
 
         /* checks getline functionality i.e whether it reached eof or           used keyboard hot keys ctrl + D*/
         if (rd_chars == -1)
@@ -66,14 +66,19 @@ int main(int ac, char **argv)
         }
         argv[i] = NULL;
 
-        printf("%s\n", user_input);
 
+	/* cmd execution */
+	execmd(argv);
+    }
+		
         /* frees up memory*/
-        if (user_input != NULL)
+	if (user_input_copy != NULL){
+		free(user_input_copy);
+	}
+	if (user_input != NULL)
         {
             free(user_input);
         }
-    }
-
+	    
     return (0);
 }
