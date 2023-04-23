@@ -14,7 +14,7 @@ int main(int ac, char **argv)
 	
     	/* declaring void variables */
     	(void)ac;
-  	void execmd(char **argv);		
+	;		
 	
     	/* create an infinite loop */
     	while (1)
