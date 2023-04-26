@@ -1,11 +1,13 @@
 #include "shell.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
+ * main - Entry point for simple shell program
  *
- * Return: 0 on success, 1 on error
+ * Description: This is a simple Unix shell program written in C. It accepts
+ * user input commands, tokenizes the commands into arguments, and executes
+ * the command with any given arguments.
+ *
+ * Return: Always returns 0.
  */
 int main(int ac, char **av)
 {
@@ -27,18 +29,18 @@ int main(int ac, char **av)
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
-				_eputs(": 0: Can't open ");
+				_eputs(": 0: Couln't open ");
 				_eputs(av[1]);
 				_eputchar('\n');
 				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
-			return (EXIT_FAILURE);
+			return (error_exiting);
 		}
 		info->readfd = fd;
 	}
 	populate_env_list(info);
 	read_history(info);
 	hsh(info, av);
-	return (EXIT_SUCCESS);
+	return (Successfully_exited);
 }
