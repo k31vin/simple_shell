@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
+ * main- Entry point for simple shell program
+ * Description: This is a simple Unix shell program
+ *written in C. It accepts user input commands
  *
  * Return: 0 on success, 1 on error
  */
@@ -33,12 +33,12 @@ int main(int ac, char **av)
 				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
-			return (EXIT_FAILURE);
+			return (error_exiting);
 		}
 		info->readfd = fd;
 	}
 	populate_env_list(info);
 	read_history(info);
 	hsh(info, av);
-	return (EXIT_SUCCESS);
+	return (successfully_exited);
 }
