@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * main- Entry point for simple shell program
- * Description: This is a simple Unix shell program
- *written in C. It accepts user input commands
+ * main- Entry point for the program
+ * Description: This is a simple shell
+ *written in C.
  *
  * Return: 0 on success, 1 on error
  */
