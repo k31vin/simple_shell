@@ -1,5 +1,11 @@
 #include "main.h"
-
+/**
+ * main - simple shell program entry point
+ * Description: simple shell program written in C
+ * for UNIX based systems. Program written by
+ * Antony Muga and Nicholas Oyengo
+ * Return:Status code 0 if successful
+ */
 int main(int ac, char **argv)
 {
 	char *prompt = "(Terminal) $ ";
