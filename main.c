@@ -2,8 +2,8 @@
 /**
  * main - simple shell program entry point
  * Description: simple shell program written in C
- * for UNIX based systems. Program written by
- * Antony Muga and Nicholas Oyengo
+ * for UNIX based systems. 
+ * kelvin kitonyo and daniel kavatha
  * Return:Status code 0 if successful
  */
 int main(int ac, char **argv)
