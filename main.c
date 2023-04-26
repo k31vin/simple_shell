@@ -33,12 +33,12 @@ int main(int ac, char **av)
 				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
-			return (error_exiting);
+			return (exit_error);
 		}
 		info->readfd = fd;
 	}
 	populate_env_list(info);
 	read_history(info);
 	hsh(info, av);
-	return (successfully_exited);
+	return (exit_success);
 }
