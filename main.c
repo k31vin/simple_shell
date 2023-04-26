@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * main- Entry point for the program
- * Description: This is a simple shell
- *written in C.
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
  *
  * Return: 0 on success, 1 on error
  */
