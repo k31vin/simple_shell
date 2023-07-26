@@ -10,6 +10,6 @@ The prompt is displayed again each time a command has been executed.
 
 use the PATH
 implement built-ins
-handle special characters : ", ', `, \, *, &, #
+handle : ", ', `, \, *, &, #
 be able to move the cursor
 handle commands with arguments
