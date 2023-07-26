@@ -10,28 +10,28 @@
  */
 int is_chain(info_t *info, char *buf, size_t *p)
 {
-	size_t j = *p;
+	size_t je = *p;
 
-	if (buf[j] == '|' && buf[j + 1] == '|')
+	if (buf[je] == '|' && buf[je + 1] == '|')
 	{
-		buf[j] = 0;
-		j++;
+		buf[je] = 0;
+		je++;
 		info->cmd_buf_type = CMD_OR;
 	}
-	else if (buf[j] == '&' && buf[j + 1] == '&')
+	else if (buf[je] == '&' && buf[je + 1] == '&')
 	{
-		buf[j] = 0;
-		j++;
+		buf[je] = 0;
+		je++;
 		info->cmd_buf_type = CMD_AND;
 	}
-	else if (buf[j] == ';') /* found end of this command */
+	else if (buf[je] == ';')
 	{
-		buf[j] = 0; /* replace semicolon with null */
+		buf[je] = 0; 
 		info->cmd_buf_type = CMD_CHAIN;
 	}
 	else
 		return (0);
-	*p = j;
+	*p = je;
 	return (1);
 }
 
@@ -47,14 +47,14 @@ int is_chain(info_t *info, char *buf, size_t *p)
  */
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
-	size_t j = *p;
+	size_t je = *p;
 
 	if (info->cmd_buf_type == CMD_AND)
 	{
 		if (info->status)
 		{
 			buf[i] = 0;
-			j = len;
+			je = len;
 		}
 	}
 	if (info->cmd_buf_type == CMD_OR)
@@ -62,26 +62,26 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 		if (!info->status)
 		{
 			buf[i] = 0;
-			j = len;
+			je = len;
 		}
 	}
 
-	*p = j;
+	*p = je;
 }
 
 /**
- * replace_alias - replaces an aliases in the tokenized string
+ *- replaces an aliases in the tokenized string
  * @info: the parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
  */
 int replace_alias(info_t *info)
 {
-	int i;
+	int w;
 	list_t *node;
 	char *p;
 
-	for (i = 0; i < 10; i++)
+	for (w = 0; w < 10; w++)
 	{
 		node = node_starts_with(info->alias, info->argv[0], '=');
 		if (!node)
@@ -99,7 +99,7 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - replaces vars in the tokenized string
+ *replaces vars in the tokenized string
  * @info: the parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
@@ -144,7 +144,7 @@ int replace_vars(info_t *info)
  * @old: address of old string
  * @new: new string
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: 1 if replaced, 0 else
  */
 int replace_string(char **old, char *new)
 {
