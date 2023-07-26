@@ -1,10 +1,9 @@
 #include "lesh.h"
 
 /**
- * interactive - returns true if shell is interactive mode
- * @info: struct address
- *  
- * Return: 1 if interactive mode, 0 otherwise
+ *  returns true if shell is interactive mode
+ * @info: struct addres 
+ *
  */
 int interactive(info_t *info)
 {
@@ -66,9 +65,9 @@ int _atoi(char *s)
 	}
 
 	if (sign == -1)
-		output = -result;
+		outp = -result;
 	else
-		output = result;
+		outp = result;
 
-	return (output);
+	return (outp);
 }
