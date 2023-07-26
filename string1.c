@@ -2,46 +2,46 @@
 
 /**
  * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
+ * @dst:destination
+ * @src:source
  *
- * Return: pointer to destination
+ * Return: pter to destination
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dst, char *src)
 {
-	int i = 0;
+	int k = 0;
 
-	if (dest == src || src == 0)
-		return (dest);
-	while (src[i])
+	if (dst == src || src == 0)
+		return (dst);
+	while (src[k])
 	{
-		dest[i] = src[i];
-		i++;
+		dst[k] = src[k];
+		k++;
 	}
-	dest[i] = 0;
-	return (dest);
+	dst[k] = 0;
+	return (dst);
 }
 
 /**
  * _strdup - duplicates a string
- * @str: the string to duplicate
+ * @str:string to duplicate
  *
- * Return: pointer to the duplicated string
+ * Return: pointer to  duplicate string
  */
 char *_strdup(const char *str)
 {
-	int length = 0;
+	int len = 0;
 	char *ret;
 
 	if (str == NULL)
 		return (NULL);
 	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
+		len++;
+	ret = malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
+	for (len++; len--;)
+		ret[len] = *--str;
 	return (ret);
 }
 
@@ -68,8 +68,8 @@ void _puts(char *str)
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On sucess 1.
+ * On error, -1 is returned, and err no is set appropriately.
  */
 int _putchar(char c)
 {

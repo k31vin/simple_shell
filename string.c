@@ -8,14 +8,14 @@
  */
 int _strlen(char *s)
 {
-	int i = 0;
+	int w = 0;
 
 	if (!s)
 		return (0);
 
 	while (*s++)
-		i++;
-	return (i);
+		w++;
+	return (w);
 }
 
 /**
@@ -41,35 +41,35 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * starts_with - checks if needle starts with haystack
- * @haystack: string to search
- * @needle: the substring to find
+ * starts_with - checks if needle starts with stack
+ * @stack: string to search
+ * @ndle: the substring to find
  *
- * Return: address of next char of haystack or NULL
+ * Return: address of next char of stack or NULL
  */
-char *starts_with(const char *haystack, const char *needle)
+char *starts_with(const char *stack, const char *ndle)
 {
-	while (*needle)
-		if (*needle++ != *haystack++)
+	while (*ndle)
+		if (*ndle++ != *stack++)
 			return (NULL);
-	return ((char *)haystack);
+	return ((char *)stack);
 }
 
 /**
- * _strcat - concatenates two strings
- * @dest: the destination buffer
- * @src: the source buffer
+ * _strcat - conczats two strings
+ * @dst:destination buffer
+ * @src:source buffer
  *
  * Return: pointer to destination buffer
  */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dst, char *src)
 {
-	char *ret = dest;
+	char *ret = dst;
 
-	while (*dest)
-		dest++;
+	while (*dst)
+		dst++;
 	while (*src)
-		*dest++ = *src++;
-	*dest = *src;
+		*dst++ = *src++;
+	*dst = *src;
 	return (ret);
 }
